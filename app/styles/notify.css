@@ -1,0 +1,22 @@
+.notice-list {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width:300px;
+  .alert-success{
+    color: #fff;
+    background-color: #30a039;
+  }
+  .alert-info{
+    color: #fff;
+    background-color: #4d8def;
+  }
+  .alert-warning{
+    color: #fff;
+    background-color: #ff9326;
+  }
+  .alert-error{
+    color: #fff;
+    background-color: #e90d0b;
+  }
+}
