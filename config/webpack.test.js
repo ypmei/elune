@@ -2,15 +2,17 @@ const devConfig = require('./webpack.dev')
 const webpack = require('webpack')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
-
 module.exports = Object.assign({}, devConfig, {
   plugins: devConfig.plugins.concat([
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
+    // http://dashboard.oneapm.net
   ]),
   devServer:{
     proxy: {
-      '/tpm': {
-        target: 'http://10.128.106.97:18090/'
+      '/api': {
+        target: 'http://dashboard.oneapm.net/',
+        changeOrigin: true,
+        pathRewrite: {'^/api' : ''}
       }
     },
     noInfo:false,

@@ -40,7 +40,7 @@ module.exports = {
       YPMEI: path.join(process.cwd(), 'app', 'predefine.js')
     }),
     new webpack.DefinePlugin({
-      YPMEI_TITLE: JSON.stringify('monitor')
+      YPMEI_URL_PREFIX: JSON.stringify('api')
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',

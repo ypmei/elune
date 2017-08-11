@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Store } from '../utils/fluxkit'
 import FluxStoreGroup from 'flux/lib/FluxStoreGroup'
-import Loading from './defaultLoadingElement'
+import Loading from '../components/Loading'
 import _ from 'lodash'
 
 export default class FetchWidget extends Component {

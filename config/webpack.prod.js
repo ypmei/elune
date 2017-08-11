@@ -21,7 +21,7 @@ module.exports = Object.assign({}, devConfig, {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.DefinePlugin({
-      YPMEI_TITLE: JSON.stringify('monitor')
+      YPMEI_URL_PREFIX: JSON.stringify('api')
     }),
     new ExtractTextPlugin('styles/[name]-[chunkhash].css')
   ])

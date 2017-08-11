@@ -1,0 +1,115 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  font-family: Open Sans,Helvetica Neue,Microsoft Yahei,Helvetica,Arial,sans-serif;
+}
+
+ul,li{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+a:link, a:visited {
+  text-decoration:none;
+  color:#333333;
+  font-size:9pt;
+  font-weight: normal;
+  line-height: 180%;
+}
+a:hover {
+  text-decoration:none;
+  color:#E90004;
+  font-size:9pt;
+  font-weight: normal;
+  line-height: 180%;
+}
+
+.flex{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+header{
+  background: linear-gradient(to top, #EAEAEA, #dfe0e2); /* 标准的语法 */
+  background: -webkit-radial-gradient(10% 0,farthest-side ellipse,rgba(119,157,207,.2) 30%,rgba(180,180,186,.15) 76%,rgba(240,240,255,.3));
+  padding-top: 10px;
+  border-bottom: 1px solid #EAEAEA;
+  flex: 0 0 50px;
+}
+footer{
+  border-top: 1px solid #EAEAEA;
+  flex: 0 0 40px;
+  line-height: 40px;
+  font-size: 12px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(230,230,230,.1) 30%,rgba(250,250,250,.5) 76%,rgba(240,240,255,.6));
+}
+.logo{
+  background: url('../static/images/logo.png') no-repeat 10px center;
+  background-size: contain;
+  height: 30px;
+  padding: 10px 0px 0px 80px;
+  font-size: 16px;
+}
+.flex-body{
+  display: flex;
+  flex: 1;
+}
+.main{
+  flex: 1;
+}
+.nav{
+  flex: 0 0 12em;
+  order: -1;
+  background: #FAFAFA;
+  border-right: 1px solid #EAEAEA;
+  padding:10px;
+}
+.navbg-color{
+  background: linear-gradient(to right, rgba(230,230,230,.1) 30%,rgba(250,250,250,.3) 76%,rgba(240,240,255,.3));
+}
+.navbg-img{
+  background: url('../static/images/bg.png') no-repeat center bottom;
+}
+.aside{
+  flex: 0 0 12em;
+  border-left:1px dashed #F1F1F1;
+}
+.relative{
+  position: relative;
+}
+.fullpage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.nav a.item{
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: #dbedff;
+  padding-left: 30px;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #032f62;
+  cursor: pointer;
+}
+.nav a.item:hover{
+  background: #1368b3;
+  color: #FFF;
+}
+.scroll-y{
+  overflow-y: auto;
+}
+@media (max-width: 768px) {
+  .flex-body {
+    flex-direction: column;
+    flex: 1;
+  }
+  .nav, .aside, .main{
+    flex: auto;
+  }
+}

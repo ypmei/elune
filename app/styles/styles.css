@@ -1,3 +1,1 @@
-@for $i from 10 to 20 by 5 {
-	.margin-$i { margin: calc($i)px }
-}
+@import "./_main.css";

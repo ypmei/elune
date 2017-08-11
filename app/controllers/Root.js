@@ -7,12 +7,6 @@ import RefreshStore from '../stores/RefreshStore'
 })
 export default class Root extends Component {
   render(){
-    return (
-      <div>
-        {
-          this.renderChildren()
-        }
-      </div>
-    )
+    return this.renderChildren()
   }
 }
