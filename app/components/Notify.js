@@ -1,4 +1,4 @@
-import '../styles/notify.css'
+import '../styles/components/notify.css'
 
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'

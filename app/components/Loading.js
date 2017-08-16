@@ -1,4 +1,4 @@
-import '../styles/loading.css'
+import '../styles/components/loading.css'
 import React, { Component } from 'react'
 
 export default class Loading extends Component{

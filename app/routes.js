@@ -3,10 +3,8 @@ export default {
   component: require('./controllers/Root'),
   indexRoute: {
     onEnter(nextState, replace) {
-      replace('apps')
+      replace('disk')
     }
   },
-  childRoutes: [
-    require('./controllers/apps/routes')
-  ]
+  childRoutes: require('./controllers/apps/routes')
 }

@@ -1,0 +1,16 @@
+.nav-bg-1{
+  background: url('../static/images/bg01.png') no-repeat center bottom;
+  transition: background-image 2s;
+}
+.nav-bg-2{
+  background: url('../static/images/bg02.png') no-repeat center bottom;
+  transition: background-image 2s;
+}
+.nav-bg-3{
+  background: url('../static/images/bg03.png') no-repeat center bottom;
+  transition: background-image 2s;
+}
+.nav-bg-4{
+  background: url('../static/images/bg04.png') no-repeat center bottom;
+  transition: background-image 2s;
+}

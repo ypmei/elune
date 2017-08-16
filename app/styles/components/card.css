@@ -1,0 +1,11 @@
+.card{
+  padding: 10px;
+  .card-title{
+    color: #444;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .card-body{
+    margin-top: 10px;
+  }
+}

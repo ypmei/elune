@@ -69,5 +69,8 @@
     "webpack-bundle-analyzer": "^2.8.2",
     "webpack-dev-server": "^1.15.1",
     "whatwg-fetch": "^1.0.0"
+  },
+  "dependencies": {
+    "react-addons-css-transition-group": "^15.6.0"
   }
 }

@@ -1,0 +1,31 @@
+.modal-content{
+  background: #FFF;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(0,0,0,.35);
+  position: absolute;
+  z-index: 10;
+  .modal-header {
+    color: #444;
+    background: linear-gradient(to top, #f9fcff, #ecf5ff);
+    /*border-top: 1px solid #b9ddfe;*/
+    border-bottom: 1px solid #e1f1ff;
+    position: relative;
+    line-height: 1;
+    overflow: hidden;
+    .modal-title {
+      margin: 0;
+      height: 35px;
+      line-height: 35px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-left: 10px;
+    }
+    .close {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}

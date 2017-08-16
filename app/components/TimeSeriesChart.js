@@ -2,17 +2,6 @@ import React, { Component } from 'react'
 import Highcharts from 'highcharts'
 import _ from 'lodash'
 import $ from 'jquery'
-import moment from 'moment'
-moment.locale('zh-cn');
-
-var pattern = 'MM/DD HH:mm';
-var tmplPrefix = '<span style="color:<%=serie.color%>"><%=serie.name%></span>'
-          + '<br/>'
-          + '<span>'
-  , pieTmplPrefix = '<span style="color:<%=point.color%>"><%=point.name%></span>'
-            + '<br/>'
-            + '<span>'
-  , tmplSuffix = '</span><br/>';
 
 Highcharts.setOptions({
   global: {
@@ -53,39 +42,10 @@ export default class TimeSeriesChart extends Component {
     options: {},
     data: [],
     yAxis: [ {} ],
-    // height: 180,
+    height: 180,
     tooltipTemplate: '',
     title: '',
     plotOptions: {},
-    tooltip: function(tooltip){
-      var tmpl, durationText
-      if(this.point && this.point.customData){
-        durationText = this.point.customData.startTime ? `从${moment(this.point.customData.startTime).format(pattern)}
-          到${moment(this.point.customData.endTime).format(pattern)}
-          的${moment.duration(this.point.customData.endTime - this.point.customData.startTime).humanize()}内${tmplSuffix}` : ''
-        tmpl = `${tooltip.chart.options.chart.type === 'pie' ? pieTmplPrefix : (tooltip.chart.options.tooltip.noName ? "" : tmplPrefix)}
-          ${durationText}
-          ${_.map([ this.point.customData.y ].concat(
-              _.chain(this.point.customData).omit('startTime', 'endTime', 'y').values().value()
-            ), function(p){
-             return `<span>${p.label}：</span><b>${p.fmtVal}</b>`
-           }).join('<br />')}`
-        return _.template(tmpl)({
-          serie: this.series,
-          point: this.point
-        });
-      }
-      if(this.points && this.points.length){
-        var serieTmpl = _.template('<i class="iconfont  state-downtime" style="color:<%=series.color%>">●</i><%=customData.y.fmtVal%>(<%=series.name%>)<br />');
-        const { startTime, endTime } = this.points[0].point.customData
-        tmpl = _.template(
-          `从${ moment(startTime).format(pattern)}到${moment(endTime).format(pattern)}的${moment.duration(endTime - startTime).humanize()}内<br/>`+
-          `${this.points.map((item)=>serieTmpl(item.point)).join('')}`
-        )
-        return tmpl(this.points[0]);
-      }
-      return null
-    }
   }
   render(){
     return (
@@ -117,31 +77,10 @@ export default class TimeSeriesChart extends Component {
         }
       }, this.props.options.title),
       credits: {
-        enabled: true,
+        enabled: false,
         text: 'OneAPM',
         href: 'http://www.oneapm.com'
       },
-      legend: Object.assign({}, {
-        itemStyle: {
-          color: '#666666',
-          fontWeight: 'normal',
-          fontSize: 12,
-          width: 150,
-          textOverflow: "ellipsis",
-          overflow: "hidden",
-          whiteSpace: "nowrap"
-        },
-        itemHoverStyle: {color: '#666666', fontWeight: 'bold'},
-        itemHiddenStyle: {color: 'rgba(102,102,102,0.5)'},
-        symbolHeight: 8,
-        symbolWidth: 12,
-        fontFamily: ' "Microsoft Yahei","Open Sans", "Hiragino Sans GB",sans-serif',
-        borderWidth: 1,
-        borderColor: '#EDEDED',
-        align: 'right',
-        verticalAlign: 'top'
-      }, this.props.options.legend),
-      loading: {},
       xAxis: Object.assign({}, {
         type: 'datetime',
         minPadding: 0,
@@ -250,20 +189,10 @@ export default class TimeSeriesChart extends Component {
           stacking: this.props.stacking
         }
       }, this.props.plotOptions),
-      tooltip: Object.assign({}, {
-        crosshairs: [ {
-          width: 1,
-          color: 'rgba(0,0,0,0.1)',
-          zIndex: 3
-        }, false ],
-        style: {color: '#666666', fontSize: 12},
-        borderWidth: 1,
-        shadow: false,
-        backgroundColor: 'rgba(248,248,248,0.6)',
-        borderRadius: 5,
-        zIndex: 8,
-        formatter: this.props.tooltip
-      }, this.props.tooltip, this.props.options.tooltip),
+      tooltip: {
+        crosshairs: true,
+        shared: true
+      },
       noData: {
         style: {
           fontSize: '12px',

@@ -1,8 +1,9 @@
+import '../styles/components/tooltip.css'
 import React from 'react';
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
-import classname from 'classnames';
-import '../styles/tooltip.css'
+import classname from 'classnames'
+
 export default class ReactTooltip extends React.Component{
   static defaultProps = {
     effect: 'float'
