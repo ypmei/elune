@@ -1,6 +1,6 @@
-/*global YPMEI_TITLE:true*/
+/*global YPMEI_URL_PREFIX:true*/
 
-const YPMEI = {
-  urlPrefix: YPMEI_URL_PREFIX,
-}
+const YPMEI = Object.assign({
+  urlPrefix: YPMEI_URL_PREFIX
+}, window.YPMEI_CONFIG || {})
 export default YPMEI
