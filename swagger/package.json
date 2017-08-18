@@ -12,11 +12,12 @@
     "swagger-express-mw": "^0.1.0"
   },
   "devDependencies": {
+    "cross-env": "^5.0.5",
     "should": "^7.1.0",
     "supertest": "^1.0.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "cross-env NODE_ENV=development node app.js ",
     "edit": "swagger project edit",
     "test": "swagger project test"
   }

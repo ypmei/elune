@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { feedDisk, feedDiskIO } from '../../../apis/disk'
-import { drillMount } from '../../../components/Drilldown'
-import Table from '../../../components/Table'
-import format from '../../../utils/format'
-import Drillview from './Drillview'
-import Nav from '../Nav'
-import Footer from '../Footer'
+import { feedApi } from '../../apis/feed'
+import { drillMount } from '../../components/Drilldown'
+import Table from '../../components/Table'
+import format from '../../utils/format'
+import Chartview from './Chartview'
+import Nav from './Nav'
+import Footer from './Footer'
 
 const diskCols = [{
     key: 'id',
@@ -25,9 +25,8 @@ const diskCols = [{
     title: __('节点'),
     width: 450
   }, {
-    key: 'callCountPerMin',
+    key: 'avg_value',
     title: __('日均值'),
-    format: format.numberic,
     width: 150
   }, {
     key: 'max_value',
@@ -45,9 +44,10 @@ const diskCols = [{
 ]
 
 export default class Disk extends Component {
-  showChart(rowData){
-    drillMount(Drillview, {
+  showChart(rowData, typeKey){
+    drillMount(Chartview, {
       title: rowData.instance_id,
+      typeKey: typeKey,
       renderTo: '.fullpage',
       store: rowData
     })
@@ -64,7 +64,10 @@ export default class Disk extends Component {
             <div className="fullpage scroll-y flex-col-1">
               <h3>{__('磁盘使用率')}</h3>
               <Table
-                fetch={feedDisk}
+                fetch={ feedApi }
+                paramStores = { [{
+                    typeKey: 'disk'
+                }] }
                 columns={diskCols.concat([{
                   key: 'tag',
                   title: __('盘符')
@@ -74,7 +77,7 @@ export default class Disk extends Component {
                   width: 150,
                   render:(fmtVal, rowData)=>{
                     return (
-                      <a href={'javascript:;'} onClick={this.showChart.bind(this, rowData)}>
+                      <a href={'javascript:;'} onClick={this.showChart.bind(this, rowData, 'disk')}>
                         <i className="iconfont">&#xe71b;</i>
                       </a>
                     )
@@ -88,7 +91,10 @@ export default class Disk extends Component {
               />
               <h3 className="b-t-1">{__('磁盘IO使用率')}</h3>
               <Table
-                fetch={feedDiskIO}
+                fetch={ feedApi }
+                paramStores = { [{
+                    typeKey: 'diskIO'
+                }] }
                 columns={diskCols.concat([{
                   key: 'tag',
                   title: __('设备')
@@ -98,7 +104,7 @@ export default class Disk extends Component {
                   width: 150,
                   render:(fmtVal, rowData)=>{
                     return (
-                      <a href={'javascript:;'} onClick={this.showChart.bind(this, rowData)}>
+                      <a href={'javascript:;'} onClick={this.showChart.bind(this, rowData, 'diskIO')}>
                         <i className="iconfont">&#xe71b;</i>
                       </a>
                     )

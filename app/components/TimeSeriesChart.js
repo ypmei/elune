@@ -8,7 +8,7 @@ Highcharts.setOptions({
     useUTC: false
   },
   // colors:['#56bc76','#eac85e','#32adfa','#c596fa','#70e0e0','#a1e55c','#f2a38d','#ffe9a6','#7aa9ff','#e5603b'],
-  colors: [ '#0873b9', '#f78e2f', '#11c583', '#ffcf68', '#7964ad', '#2ea8ed', '#b07964', '#0a4e78', '#6ddbe1', '#db4c58' ],
+  colors: [ '#f78e2f', '#11c583', '#0873b9', '#ffcf68', '#7964ad', '#2ea8ed', '#b07964', '#0a4e78', '#6ddbe1', '#db4c58' ],
   lang: {
     weekdays: [
       __('星期日'),

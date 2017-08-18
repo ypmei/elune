@@ -6,17 +6,27 @@ const navs = [
   {
     url: '#/disk',
     key: 'disk',
-    title: '磁盘'
+    title: '磁盘使用'
   },
   {
     url: '#/memory',
     key: 'memory',
-    title: '内存'
+    title: '内存和负载'
   },
   {
     url: '#/net',
     key: 'net',
-    title: '网络'
+    title: '网络流量'
+  },
+  {
+    url: '#/tcp',
+    key: 'tcp',
+    title: 'TCP'
+  },
+  {
+    url: '#/jvm',
+    key: 'jvm',
+    title: 'JVM垃圾回收'
   }
 ]
 

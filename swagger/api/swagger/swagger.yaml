@@ -18,16 +18,21 @@ consumes:
 produces:
   - application/json
 paths:
-  /ai/v5/licenses:
+  /feed.do:
     x-swagger-router-controller: get_licenses
     get:
       description: 获取授权文件信息
       operationId: get_licenses
+      parameters:
+        - name: topic
+          in: query
+          required: true
+          type: string
       responses:
         "200":
           description: Success
           schema:
-            $ref: "#/definitions/GetLicensesResponse"
+            $ref: "#/definitions/GetfeedResponse"
         default:
           description: Error
           schema:
@@ -60,27 +65,32 @@ paths:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
-  GetLicensesResponse:
-    type: object
-    properties:
-      agentNum:
-        type: integer
-        format: 'int32'
-      endTime:
-        type: string
-      ip:
-        type: array
-        items:
+  GetfeedResponse:
+    type: array
+    items:
+      type: object
+      required:
+        - avg_value
+        - day
+        - instance_id
+        - max_value
+        - occur_last_time
+        - tag
+      properties:
+        avg_value:
           type: string
-      mac:
-        type: array
-        items:
+        day:
           type: string
-      remainingDays:
-        type: integer
-        format: 'int32'
-      startTime:
-        type: string
+        instance_id:
+          type: string
+        max_value:
+          type: string
+        occur_last_time:
+          type: string
+        occur_times:
+          type: string
+        tag:
+          type: string
   HelloWorldResponse:
     required:
       - message

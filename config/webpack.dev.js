@@ -21,6 +21,6 @@ module.exports = Object.assign({}, baseConfig, {
     })
   ]),
   devServer: Object.assign({}, baseConfig.devServer, {
-    // setup: require('../swagger/app')
+    setup: require('../swagger/app')
   })
 })
