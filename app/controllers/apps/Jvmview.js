@@ -18,32 +18,26 @@ const jvmCols = [{
     }
   },{
     key: 'date',
-    title: __('日期'),
-    width: 120
+    title: __('日期')
   }, {
     key: 'tag1',
-    title: __('IP'),
-    width: 150
+    title: __('IP')
   },{
     key: 'tag2',
     title: __('进程'),
-    width: 'auto'
+    width: '20%'
   }, {
     key: 'metric_id',
-    title: __('指标项'),
-    width: 150
+    title: __('指标项')
   }, {
     key: 'avg_time',
-    title: __('平均gc时间(ms)'),
-    width: 150
+    title: __('平均gc时间(ms)')
   }, {
     key: 'totle_gc',
-    title: __('总gc次数'),
-    width: 200
+    title: __('总gc次数')
   }, {
     key: 'max_time',
-    title: __('最长gc时间(ms)'),
-    width: 200
+    title: __('最长gc时间(ms)')
   }
 ]
 
@@ -58,25 +52,21 @@ const oldCols = [{
     }
   },{
     key: 'date',
-    title: __('日期'),
-    width: 120
+    title: __('日期')
   }, {
     key: 'tag1',
-    title: __('IP'),
-    width: 150
+    title: __('IP')
   },{
     key: 'tag2',
     title: __('进程'),
-    width: 'auto'
+    width: '20%'
   }, {
     key: 'avg_use_pct',
     title: __('平均使用(%)'),
-    width: 200,
     render:(fmtVal)=>fmtVal+' %'
   }, {
     key: 'over_75_cnt',
     title: __('百分数占比_75(%)'),
-    width: 200,
     render:(fmtVal)=>fmtVal+' %'
   }
 ]

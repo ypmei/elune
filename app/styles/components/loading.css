@@ -1,6 +1,10 @@
 .default-loader{
   text-align: center;
-  .icon{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  .iconfont{
     display: inline-block;
     font-size: 30px;
     animation: loader-rotate 2s infinite linear;

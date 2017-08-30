@@ -19,15 +19,13 @@ const tcpCols = [{
   }, {
     key: 'instance_id',
     title: __('实例ID'),
-    width: 'auto'
+    width: '40%'
   }, {
     key: 'avg_value',
-    title: __('均值'),
-    width: 150
+    title: __('均值')
   }, {
     key: 'max_value',
-    title: __('最大值'),
-    width: 150
+    title: __('最大值')
   }
 ]
 
@@ -43,16 +41,14 @@ const retranTcpCols = [{
   }, {
     key: 'instance_id',
     title: __('实例ID'),
-    width: 'auto'
+    width: '40%'
   }, {
     key: 'avg_value',
     title: __('均值(%)'),
-    width: 150,
     render:(fmtVal)=>fmtVal+' %'
   }, {
     key: 'max_value',
     title: __('最大值(%)'),
-    width: 150,
     render:(fmtVal)=>fmtVal+' %'
   }
 ]

@@ -10,7 +10,7 @@ export default class Loading extends Component{
     return (
       <div className="default-loader" style={{height: this.props.height / 2, lineHeight: this.props.height / 2 }}>
         <div className="loader">
-          <i className="icon">&#xe652;</i>
+          <i className="iconfont">&#xe652;</i>
         </div>
         {this.props.content}
         {this.props.children}

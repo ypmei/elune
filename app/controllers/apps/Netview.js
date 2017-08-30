@@ -18,28 +18,23 @@ const netCols = [{
     }
   },{
     key: 'day',
-    title: __('日期'),
-    width: 120
+    title: __('日期')
   }, {
     key: 'instance_id',
     title: __('节点'),
-    width: 450
+    width: '20%'
   }, {
     key: 'avg_value',
-    title: __('日均值(kb)'),
-    width: 150
+    title: __('日均值(kb)')
   }, {
     key: 'max_value',
-    title: __('日峰值(kb)'),
-    width: 150
+    title: __('日峰值(kb)')
   }, {
     key: 'occur_last_time',
-    title: __('最后发生时间'),
-    width: 200
+    title: __('最后发生时间')
   }, {
     key: 'occur_times',
-    title: __('峰值发生次数'),
-    width: 150
+    title: __('峰值发生次数')
   }
 ]
 
